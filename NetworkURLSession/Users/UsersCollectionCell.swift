@@ -13,7 +13,7 @@ class UsersCollectionCell: UICollectionViewCell {
     @IBOutlet weak var userEmail: UILabel!
     
     func fillCell(fullname: String?, email: String?) {
-        userFullname.text = "Fullname: \(fullname ?? "")"
-        userEmail.text = "Email: \(email ?? "" )"
+        userFullname.text = fullname
+        userEmail.text = email
     }
 }
