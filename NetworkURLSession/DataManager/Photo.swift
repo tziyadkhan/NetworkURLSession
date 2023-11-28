@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Photo: Codable {
     var albumId: Int?
     var id: Int?

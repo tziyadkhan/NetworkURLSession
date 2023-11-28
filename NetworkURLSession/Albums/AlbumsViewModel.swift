@@ -15,8 +15,8 @@ class AlbumsViewModel {
     
     func getAlbumObjects(completion: @escaping () -> Void) {
         networkManager.getObjects(type: [Album].self,
-                                  urlInput: "albums") { result in
-            switch (result) {
+                                  urlInput: "albums") { results in
+            switch (results) {
             case .success(let albumItems):
                 self.items = albumItems
                 completion()

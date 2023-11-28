@@ -9,8 +9,8 @@ import Foundation
 
 class PhotoViewModel {
     
-    var items: [Photo]?
     let networkManager = NetworkManager()
+    var items: [Photo]?
     
     func getPhotoObjects(completion: @escaping () -> Void) {
         networkManager.getObjects(type: [Photo].self,
@@ -18,6 +18,7 @@ class PhotoViewModel {
             switch(results) {
             case .success(let photoItems):
                 self.items = photoItems
+                completion()
             case .failure(let error):
                 print(error.localizedDescription)
             }

@@ -9,4 +9,6 @@ import UIKit
 
 class SelectedPhotoCell: UICollectionViewCell {
     
+    @IBOutlet weak var selectedImage: UIImageView!
+    
 }
