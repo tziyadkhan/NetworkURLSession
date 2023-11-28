@@ -103,20 +103,20 @@
                                                         <constraint firstAttribute="height" constant="150" id="kcc-hM-cGS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-px-GRx">
-                                                    <rect key="frame" x="8" y="166" width="345" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-px-GRx">
+                                                    <rect key="frame" x="8" y="157" width="345" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ndG-px-GRx" firstAttribute="leading" secondItem="L6x-aH-zjW" secondAttribute="leading" constant="8" id="AFQ-ao-LgI"/>
+                                                <constraint firstAttribute="bottom" secondItem="ndG-px-GRx" secondAttribute="bottom" constant="8" id="96i-wA-URz"/>
                                                 <constraint firstItem="sha-NL-hui" firstAttribute="centerX" secondItem="L6x-aH-zjW" secondAttribute="centerX" id="dAZ-sg-YhZ"/>
-                                                <constraint firstAttribute="bottom" secondItem="ndG-px-GRx" secondAttribute="bottom" constant="12" id="e2Z-F0-ao9"/>
                                                 <constraint firstItem="sha-NL-hui" firstAttribute="top" secondItem="L6x-aH-zjW" secondAttribute="top" constant="8" id="fJU-W0-yQX"/>
+                                                <constraint firstItem="ndG-px-GRx" firstAttribute="centerX" secondItem="L6x-aH-zjW" secondAttribute="centerX" id="n1k-ZB-AXo"/>
                                                 <constraint firstAttribute="trailing" secondItem="ndG-px-GRx" secondAttribute="trailing" constant="8" id="ndF-RX-Hct"/>
-                                                <constraint firstItem="ndG-px-GRx" firstAttribute="top" secondItem="sha-NL-hui" secondAttribute="bottom" constant="8" symbolic="YES" id="rbg-Na-VA5"/>
+                                                <constraint firstItem="ndG-px-GRx" firstAttribute="top" secondItem="sha-NL-hui" secondAttribute="bottom" constant="-1" id="rbg-Na-VA5"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="361" height="200"/>
@@ -149,6 +149,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFv-ea-Dc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2284.7328244274809" y="461.97183098591552"/>
+        </scene>
+        <!--Selected Photo View Controller-->
+        <scene sceneID="q7W-Xk-udK">
+            <objects>
+                <viewController storyboardIdentifier="SelectedPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cfF-lW-oBI" customClass="SelectedPhotoViewController" customModule="NetworkURLSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HrP-cT-WNM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sku-fJ-Spk">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4zY-20-jtJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4zY-20-jtJ" firstAttribute="trailing" secondItem="Sku-fJ-Spk" secondAttribute="trailing" id="Ao0-0O-3Ok"/>
+                            <constraint firstItem="Sku-fJ-Spk" firstAttribute="leading" secondItem="4zY-20-jtJ" secondAttribute="leading" id="EQe-2z-Dwh"/>
+                            <constraint firstItem="Sku-fJ-Spk" firstAttribute="top" secondItem="4zY-20-jtJ" secondAttribute="top" id="HcP-rg-1mY"/>
+                            <constraint firstItem="4zY-20-jtJ" firstAttribute="bottom" secondItem="Sku-fJ-Spk" secondAttribute="bottom" id="fLA-93-pka"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="apiImage" destination="Sku-fJ-Spk" id="Ygf-He-ppo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gh-1l-TfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285" y="1135"/>
         </scene>
         <!--Users-->
         <scene sceneID="ChS-Rw-DJy">
