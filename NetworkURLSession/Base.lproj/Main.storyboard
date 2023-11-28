@@ -363,10 +363,16 @@
                                                     </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
                                             <constraints>
                                                 <constraint firstItem="Hog-rP-LbT" firstAttribute="top" secondItem="hRT-5T-cwv" secondAttribute="top" constant="17" id="FQc-0r-fzU"/>
                                                 <constraint firstItem="Hog-rP-LbT" firstAttribute="centerX" secondItem="hRT-5T-cwv" secondAttribute="centerX" id="p70-DQ-ttN"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="359" height="350"/>
                                         <connections>
@@ -484,45 +490,56 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S0T-Ue-bzU">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dql-gM-WHe">
-                                    <size key="itemSize" width="360" height="280"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dql-gM-WHe">
+                                    <size key="itemSize" width="360" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CommentCollectionCell" reuseIdentifier="CommentCollectionCell" id="bN2-Fy-BKl" customClass="CommentCollectionCell" customModule="NetworkURLSession" customModuleProvider="target">
-                                        <rect key="frame" x="16.666666666666668" y="0.0" width="360" height="280"/>
+                                        <rect key="frame" x="16.666666666666668" y="0.0" width="360" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uZr-g0-nor">
-                                            <rect key="frame" x="0.0" y="0.0" width="360" height="280"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-WQ-qp1">
-                                                    <rect key="frame" x="8" y="8" width="344" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeE-WQ-qp1">
+                                                    <rect key="frame" x="8" y="8" width="344" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKJ-EO-Hb4">
-                                                    <rect key="frame" x="8" y="102" width="344" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Comment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKJ-EO-Hb4">
+                                                    <rect key="frame" x="8" y="72" width="344" height="21.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-0W-fAZ">
-                                                    <rect key="frame" x="8" y="70" width="344" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHE-0W-fAZ">
+                                                    <rect key="frame" x="8" y="40" width="344" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="oeE-WQ-qp1" secondAttribute="trailing" constant="8" id="0E2-sv-3Jg"/>
+                                                <constraint firstAttribute="trailing" secondItem="BKJ-EO-Hb4" secondAttribute="trailing" constant="8" id="6ad-O8-bgs"/>
+                                                <constraint firstItem="oeE-WQ-qp1" firstAttribute="top" secondItem="uZr-g0-nor" secondAttribute="top" constant="8" id="KCB-ed-0Pb"/>
+                                                <constraint firstItem="BKJ-EO-Hb4" firstAttribute="top" secondItem="nHE-0W-fAZ" secondAttribute="bottom" constant="8" id="Pot-yf-P21"/>
+                                                <constraint firstItem="oeE-WQ-qp1" firstAttribute="leading" secondItem="uZr-g0-nor" secondAttribute="leading" constant="8" id="TxZ-dl-ZVE"/>
+                                                <constraint firstItem="nHE-0W-fAZ" firstAttribute="top" secondItem="oeE-WQ-qp1" secondAttribute="bottom" constant="8" id="eht-wV-0we"/>
+                                                <constraint firstAttribute="trailing" secondItem="nHE-0W-fAZ" secondAttribute="trailing" constant="8" id="eqe-17-hq7"/>
+                                                <constraint firstItem="BKJ-EO-Hb4" firstAttribute="leading" secondItem="uZr-g0-nor" secondAttribute="leading" constant="8" id="io2-ov-uQ3"/>
+                                                <constraint firstItem="oeE-WQ-qp1" firstAttribute="centerX" secondItem="uZr-g0-nor" secondAttribute="centerX" id="lO3-Wg-7ok"/>
+                                                <constraint firstItem="BKJ-EO-Hb4" firstAttribute="width" secondItem="uZr-g0-nor" secondAttribute="width" multiplier="0.955556" id="oe3-DC-1Y7"/>
+                                                <constraint firstItem="nHE-0W-fAZ" firstAttribute="leading" secondItem="uZr-g0-nor" secondAttribute="leading" constant="8" id="owP-aM-49h"/>
+                                                <constraint firstAttribute="bottom" secondItem="BKJ-EO-Hb4" secondAttribute="bottom" constant="26.333333333333329" id="qgM-x6-8NR"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
-                                        <size key="customSize" width="360" height="280"/>
+                                        <size key="customSize" width="360" height="120"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="20"/>

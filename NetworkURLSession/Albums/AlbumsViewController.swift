@@ -25,6 +25,7 @@ class AlbumsViewController: UIViewController {
 }
 
 extension AlbumsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         albumsViewModel.items?.count ?? 0
     }

@@ -7,8 +7,7 @@
 
 import UIKit
 
-class UsersViewController: UIViewController {
-    
+class UsersViewController: UIViewController {    
     
     @IBOutlet weak var collection: UICollectionView!
     let userViewModel = UsersViewModel()
@@ -19,9 +18,7 @@ class UsersViewController: UIViewController {
             DispatchQueue.main.async {
                 self.collection.reloadData()
             }
-            // Do any additional setup after loading the view.
         }
-        
     }
 }
 

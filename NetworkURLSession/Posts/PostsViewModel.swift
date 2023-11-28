@@ -8,8 +8,8 @@
 import Foundation
 
 class PostsViewModel {
-    var items: [Post]?
     
+    var items: [Post]?
     let networkManager = NetworkManager()
     
     func getPostItems(completion: @escaping () -> Void) {

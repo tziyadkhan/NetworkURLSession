@@ -12,7 +12,6 @@ class AlbumsViewModel {
     let networkManager = NetworkManager()
     var items: [Album]?
     
-    
     func getAlbumObjects(completion: @escaping () -> Void) {
         networkManager.getObjects(type: [Album].self,
                                   urlInput: "albums") { results in

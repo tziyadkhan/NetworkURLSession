@@ -9,7 +9,6 @@ import UIKit
 
 class UsersInfoController: UIViewController {
     
-
     @IBOutlet weak var collection: UICollectionView!
     
     var selectedUserID: Int?

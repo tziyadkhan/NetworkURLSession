@@ -13,7 +13,6 @@ class CommentsViewModel {
     let networkManager = NetworkManager()
     var postID: Int?
     
-    
     func getCommentItems(postID: Int?, completion: @escaping () -> Void) {
         networkManager.getObjects(type: [Comment].self,
                                   urlInput: "posts/\(postID ?? 0)/comments") { result in
