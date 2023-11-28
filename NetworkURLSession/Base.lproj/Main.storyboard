@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Albums View Controller-->
+        <!--Albums-->
         <scene sceneID="ThN-MM-QKj">
             <objects>
                 <viewController storyboardIdentifier="AlbumsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dfa-qE-Ogw" customClass="AlbumsViewController" customModule="NetworkURLSession" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <constraint firstItem="8D8-v7-zKq" firstAttribute="bottom" secondItem="DYO-of-zup" secondAttribute="bottom" id="p8e-sv-HH6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9Ow-kX-Iqs"/>
+                    <navigationItem key="navigationItem" title="Albums" id="9Ow-kX-Iqs"/>
                     <connections>
                         <outlet property="table" destination="DYO-of-zup" id="jP2-1T-bfu"/>
                     </connections>
@@ -71,21 +71,84 @@
             </objects>
             <point key="canvasLocation" x="704.58015267175574" y="461.97183098591552"/>
         </scene>
-        <!--View Controller-->
+        <!--Photos-->
         <scene sceneID="REc-dn-3ZN">
             <objects>
-                <viewController id="kk5-MI-akg" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kk5-MI-akg" customClass="PhotoViewController" customModule="NetworkURLSession" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gtl-Jc-vyn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VL4-Z1-Dzx">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LbB-jJ-WKr">
+                                    <size key="itemSize" width="361" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotoCollectionCell" reuseIdentifier="PhotoCollectionCell" id="H3h-cn-XxV" customClass="PhotoCollectionCell" customModule="NetworkURLSession" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="361" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L6x-aH-zjW">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sha-NL-hui">
+                                                    <rect key="frame" x="8" y="8" width="345" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="345" id="bEC-C9-M4M"/>
+                                                        <constraint firstAttribute="height" constant="150" id="kcc-hM-cGS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndG-px-GRx">
+                                                    <rect key="frame" x="8" y="166" width="345" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ndG-px-GRx" firstAttribute="leading" secondItem="L6x-aH-zjW" secondAttribute="leading" constant="8" id="AFQ-ao-LgI"/>
+                                                <constraint firstItem="sha-NL-hui" firstAttribute="centerX" secondItem="L6x-aH-zjW" secondAttribute="centerX" id="dAZ-sg-YhZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="ndG-px-GRx" secondAttribute="bottom" constant="12" id="e2Z-F0-ao9"/>
+                                                <constraint firstItem="sha-NL-hui" firstAttribute="top" secondItem="L6x-aH-zjW" secondAttribute="top" constant="8" id="fJU-W0-yQX"/>
+                                                <constraint firstAttribute="trailing" secondItem="ndG-px-GRx" secondAttribute="trailing" constant="8" id="ndF-RX-Hct"/>
+                                                <constraint firstItem="ndG-px-GRx" firstAttribute="top" secondItem="sha-NL-hui" secondAttribute="bottom" constant="8" symbolic="YES" id="rbg-Na-VA5"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="361" height="200"/>
+                                        <connections>
+                                            <outlet property="image" destination="sha-NL-hui" id="zq4-KY-Y1M"/>
+                                            <outlet property="imageTitle" destination="ndG-px-GRx" id="XFN-a1-EGe"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="kk5-MI-akg" id="jF1-qz-7aj"/>
+                                    <outlet property="delegate" destination="kk5-MI-akg" id="EOa-3Y-ZOT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zsH-Kz-eVe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VL4-Z1-Dzx" firstAttribute="top" secondItem="zsH-Kz-eVe" secondAttribute="top" id="9ww-hK-fNu"/>
+                            <constraint firstItem="zsH-Kz-eVe" firstAttribute="trailing" secondItem="VL4-Z1-Dzx" secondAttribute="trailing" id="Lgl-xT-pp4"/>
+                            <constraint firstItem="VL4-Z1-Dzx" firstAttribute="leading" secondItem="zsH-Kz-eVe" secondAttribute="leading" id="bdn-c4-MRH"/>
+                            <constraint firstItem="zsH-Kz-eVe" firstAttribute="bottom" secondItem="VL4-Z1-Dzx" secondAttribute="bottom" id="uAT-ke-YQ8"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dBD-4j-pG4"/>
+                    <navigationItem key="navigationItem" title="Photos" id="dBD-4j-pG4"/>
+                    <connections>
+                        <outlet property="collection" destination="VL4-Z1-Dzx" id="dei-nj-8RV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yFv-ea-Dc2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2285" y="462"/>
+            <point key="canvasLocation" x="2284.7328244274809" y="461.97183098591552"/>
         </scene>
         <!--Users-->
         <scene sceneID="ChS-Rw-DJy">
@@ -156,7 +219,7 @@
                             <constraint firstItem="x9o-Kf-RWX" firstAttribute="trailing" secondItem="1fk-sz-MLJ" secondAttribute="trailing" id="cUo-ne-L4O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="LvR-mL-eyn"/>
+                    <navigationItem key="navigationItem" title="Users" id="LvR-mL-eyn"/>
                     <connections>
                         <outlet property="collection" destination="1fk-sz-MLJ" id="8GY-wQ-6hY"/>
                     </connections>
@@ -267,7 +330,7 @@
             </objects>
             <point key="canvasLocation" x="3774.8091603053435" y="1112.6760563380283"/>
         </scene>
-        <!--Posts View Controller-->
+        <!--Posts-->
         <scene sceneID="7Fc-NR-0Rj">
             <objects>
                 <viewController storyboardIdentifier="PostsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="46c-l8-jw6" customClass="PostsViewController" customModule="NetworkURLSession" customModuleProvider="target" sceneMemberID="viewController">
@@ -330,7 +393,7 @@
                             <constraint firstItem="xv5-zr-6eN" firstAttribute="bottom" secondItem="6RX-sN-pfP" secondAttribute="bottom" id="uWB-A1-1Hv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5UU-UO-ThT"/>
+                    <navigationItem key="navigationItem" title="Posts" id="5UU-UO-ThT"/>
                     <connections>
                         <outlet property="table" destination="6RX-sN-pfP" id="UP2-Mb-8Zw"/>
                     </connections>

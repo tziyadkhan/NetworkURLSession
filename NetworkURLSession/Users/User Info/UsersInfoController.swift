@@ -17,7 +17,6 @@ class UsersInfoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         userInfoViewModel.getUserItems(userID: selectedUserID) {
             DispatchQueue.main.async {
                 self.collection.reloadData()

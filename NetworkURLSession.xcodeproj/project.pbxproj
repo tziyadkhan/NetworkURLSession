@@ -12,6 +12,10 @@
 		903B74302B15C7D40067961A /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B742F2B15C7D40067961A /* AlbumsViewController.swift */; };
 		903B74342B15D3E80067961A /* AlbumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B74332B15D3E80067961A /* AlbumTableCell.swift */; };
 		903B74362B15D65D0067961A /* PostTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B74352B15D65D0067961A /* PostTableCell.swift */; };
+		903B74382B15E2210067961A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B74372B15E2210067961A /* Photo.swift */; };
+		903B743A2B15E2A50067961A /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B74392B15E2A50067961A /* PhotoViewModel.swift */; };
+		903B743E2B15E2E10067961A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B743D2B15E2E10067961A /* PhotoViewController.swift */; };
+		903B74412B15EC1B0067961A /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B74402B15EC1B0067961A /* PhotoCollectionCell.swift */; };
 		905D3D352B14C88800F3265A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905D3D342B14C88800F3265A /* AppDelegate.swift */; };
 		905D3D372B14C88800F3265A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905D3D362B14C88800F3265A /* SceneDelegate.swift */; };
 		905D3D3C2B14C88800F3265A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 905D3D3A2B14C88800F3265A /* Main.storyboard */; };
@@ -40,6 +44,10 @@
 		903B742F2B15C7D40067961A /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		903B74332B15D3E80067961A /* AlbumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableCell.swift; sourceTree = "<group>"; };
 		903B74352B15D65D0067961A /* PostTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableCell.swift; sourceTree = "<group>"; };
+		903B74372B15E2210067961A /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		903B74392B15E2A50067961A /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		903B743D2B15E2E10067961A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		903B74402B15EC1B0067961A /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		905D3D312B14C88800F3265A /* NetworkURLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkURLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D3D342B14C88800F3265A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		905D3D362B14C88800F3265A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		903B743F2B15E2E80067961A /* Selected Photo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Selected Photo";
+			sourceTree = "<group>";
+		};
 		905D3D282B14C88800F3265A = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +112,12 @@
 				905D3D482B14C9A100F3265A /* Posts */,
 				905D3D4B2B14C9BD00F3265A /* Users */,
 				905D3D492B14C9A500F3265A /* Albums */,
+				905D3D4A2B14C9B700F3265A /* Photos */,
 				905D3D5D2B14CBCA00F3265A /* DataManager */,
 				905D3D5B2B14CAD700F3265A /* NetworkManager.swift */,
 				905D3D3A2B14C88800F3265A /* Main.storyboard */,
 				905D3D362B14C88800F3265A /* SceneDelegate.swift */,
 				905D3D342B14C88800F3265A /* AppDelegate.swift */,
-				905D3D4A2B14C9B700F3265A /* Photos */,
 				905D3D3D2B14C88900F3265A /* Assets.xcassets */,
 				905D3D3F2B14C88900F3265A /* LaunchScreen.storyboard */,
 				905D3D422B14C88900F3265A /* Info.plist */,
@@ -134,6 +149,10 @@
 		905D3D4A2B14C9B700F3265A /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				903B743D2B15E2E10067961A /* PhotoViewController.swift */,
+				903B74392B15E2A50067961A /* PhotoViewModel.swift */,
+				903B74402B15EC1B0067961A /* PhotoCollectionCell.swift */,
+				903B743F2B15E2E80067961A /* Selected Photo */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -166,6 +185,7 @@
 				905D3D602B14D77B00F3265A /* Comment.swift */,
 				905D3D642B14E81600F3265A /* User.swift */,
 				903B742B2B15C7510067961A /* Album.swift */,
+				903B74372B15E2210067961A /* Photo.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -264,15 +284,19 @@
 				905D3D4D2B14CA3500F3265A /* PostsViewController.swift in Sources */,
 				905D3D712B14EFB900F3265A /* UsersInfoController.swift in Sources */,
 				905D3D632B14D8AE00F3265A /* CommentCollectionCell.swift in Sources */,
+				903B743A2B15E2A50067961A /* PhotoViewModel.swift in Sources */,
 				905D3D582B14CAAC00F3265A /* CommentsViewController.swift in Sources */,
 				905D3D772B14F8EE00F3265A /* UserInfoViewModel.swift in Sources */,
 				905D3D612B14D77B00F3265A /* Comment.swift in Sources */,
+				903B74382B15E2210067961A /* Photo.swift in Sources */,
+				903B74412B15EC1B0067961A /* PhotoCollectionCell.swift in Sources */,
 				903B74302B15C7D40067961A /* AlbumsViewController.swift in Sources */,
 				905D3D5A2B14CAC300F3265A /* CommentsViewModel.swift in Sources */,
 				905D3D652B14E81600F3265A /* User.swift in Sources */,
 				905D3D352B14C88800F3265A /* AppDelegate.swift in Sources */,
 				905D3D372B14C88800F3265A /* SceneDelegate.swift in Sources */,
 				905D3D5F2B14CBD700F3265A /* Post.swift in Sources */,
+				903B743E2B15E2E10067961A /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ class CommentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Comments"
         commentViewModel.getCommentItems(postID: postID) {
             DispatchQueue.main.async {
                 self.collection.reloadData()
