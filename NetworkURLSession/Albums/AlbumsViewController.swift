@@ -8,10 +8,10 @@
 import UIKit
 
 class AlbumsViewController: UIViewController {
-
+    
     @IBOutlet weak var table: UITableView!
     
-    let albumsViewModel = AlbumsViewModel()
+    let albumsViewModel = AlbumsViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,12 +9,15 @@ import Foundation
 
 class PhotoViewModel {
     
-    let networkManager = NetworkManager()
+    let service: NetworkManagerService
+    init(service: NetworkManagerService) {
+        self.service = service
+    }
     var items: [Photo]?
     
     func getPhotoObjects(completion: @escaping () -> Void) {
-        networkManager.getObjects(type: [Photo].self,
-                                  urlInput: "photos") { results in
+        service.getObjects(type: [Photo].self,
+                           urlInput: "photos") { results in
             switch(results) {
             case .success(let photoItems):
                 self.items = photoItems

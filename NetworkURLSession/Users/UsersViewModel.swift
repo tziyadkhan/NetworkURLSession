@@ -9,13 +9,17 @@ import Foundation
 
 class UsersViewModel {
     
-    let networkManager = NetworkManager()
+    let service: NetworkManagerService
+    init(service: NetworkManagerService) {
+        self.service = service
+    }
+    
     var items: [User]?
     var userID: Int?
     
     func getUserItems(completion: @escaping () -> Void) {
-        networkManager.getObjects(type: [User].self,
-                                  urlInput: "users") { result in
+        service.getObjects(type: [User].self,
+                           urlInput: "users") { result in
             switch (result) {
             case .success(let userItem):
                 self.items = userItem

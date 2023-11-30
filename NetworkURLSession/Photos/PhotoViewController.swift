@@ -10,7 +10,7 @@ import UIKit
 class PhotoViewController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
-    let photoViewModel = PhotoViewModel()
+    let photoViewModel = PhotoViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
         cell.imageTitle.text =  photoViewModel.items?[indexPath.item].title
         
         if let imageURLString = photoViewModel.items?[indexPath.item].url,
-        let imageURL = URL(string: imageURLString) {
+           let imageURL = URL(string: imageURLString) {
             URLSession.shared.dataTask(with: imageURL) { data, response, error in
                 if let imageData = data {
                     DispatchQueue.main.async {

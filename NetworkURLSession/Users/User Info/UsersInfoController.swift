@@ -12,7 +12,7 @@ class UsersInfoController: UIViewController {
     @IBOutlet weak var collection: UICollectionView!
     
     var selectedUserID: Int?
-    let userInfoViewModel = UserInfoViewModel()
+    let userInfoViewModel = UserInfoViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()

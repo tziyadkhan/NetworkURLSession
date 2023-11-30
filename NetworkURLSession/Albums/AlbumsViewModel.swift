@@ -9,11 +9,14 @@ import Foundation
 
 class AlbumsViewModel {
     
-    let networkManager = NetworkManager()
+    let service: NetworkManagerService
+    init(service: NetworkManagerService) {
+        self.service = service
+    }
     var items: [Album]?
     
     func getAlbumObjects(completion: @escaping () -> Void) {
-        networkManager.getObjects(type: [Album].self,
+        service.getObjects(type: [Album].self,
                                   urlInput: "albums") { results in
             switch (results) {
             case .success(let albumItems):

@@ -10,7 +10,7 @@ import UIKit
 class UsersViewController: UIViewController {    
     
     @IBOutlet weak var collection: UICollectionView!
-    let userViewModel = UsersViewModel()
+    let userViewModel = UsersViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()

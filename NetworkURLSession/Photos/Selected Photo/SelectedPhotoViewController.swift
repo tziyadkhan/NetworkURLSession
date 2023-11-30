@@ -11,7 +11,7 @@ class SelectedPhotoViewController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
     
-    let selectedPhotoViewModel = SelectedPhotoViewModel()
+    let selectedPhotoViewModel = SelectedPhotoViewModel(service: NetworkManager())
     var selectedItem: Int?
     
     override func viewDidLoad() {

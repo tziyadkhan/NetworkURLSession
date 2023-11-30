@@ -11,7 +11,7 @@ class PostsViewController: UIViewController {
     
     @IBOutlet weak var table: UITableView!
     
-    let postViewModel = PostsViewModel()
+    let postViewModel = PostsViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +26,15 @@ class PostsViewController: UIViewController {
 
 extension PostsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                postViewModel.items?.count ?? 0
+        postViewModel.items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "PostTableCell", for: indexPath) as! PostTableCell
-                guard let postItem = postViewModel.items?[indexPath.row] else {return UITableViewCell()}
-                cell.fillCell(title: postItem.title,
-                              body: postItem.body)
-                return cell
+        guard let postItem = postViewModel.items?[indexPath.row] else {return UITableViewCell()}
+        cell.fillCell(title: postItem.title,
+                      body: postItem.body)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

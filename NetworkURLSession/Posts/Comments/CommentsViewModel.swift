@@ -10,12 +10,16 @@ import Foundation
 class CommentsViewModel {
     
     var items: [Comment]?
-    let networkManager = NetworkManager()
+    
+    let service: NetworkManagerService
+    init(service: NetworkManagerService) {
+        self.service = service
+    }
     var postID: Int?
     
     func getCommentItems(postID: Int?, completion: @escaping () -> Void) {
-        networkManager.getObjects(type: [Comment].self,
-                                  urlInput: "posts/\(postID ?? 0)/comments") { result in
+        service.getObjects(type: [Comment].self,
+                           urlInput: "posts/\(postID ?? 0)/comments") { result in
             switch (result) {
             case .success(let comments):
                 self.items = comments

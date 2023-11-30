@@ -9,12 +9,17 @@ import Foundation
 
 class SelectedPhotoViewModel {
     
-    let networkManager = NetworkManager()
+    
+    let service: NetworkManagerService
+    init(service: NetworkManagerService) {
+        self.service = service
+    }
+    //    let networkManager = NetworkManager()
     var items: [Photo]?
     
     func getPhotoItem(selectedID: Int?, completion: @escaping () -> Void) {
-        networkManager.getObjects(type: [Photo].self,
-                                  urlInput: "photos") { result in
+        service.getObjects(type: [Photo].self,
+                           urlInput: "photos") { result in
             switch(result) {
             case .success(let photoItem):
                 self.items = photoItem

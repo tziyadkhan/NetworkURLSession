@@ -8,11 +8,11 @@
 import UIKit
 
 class CommentsViewController: UIViewController {
-
+    
     @IBOutlet weak var collection: UICollectionView!
     
     var postID: Int?
-    let commentViewModel = CommentsViewModel()
+    let commentViewModel = CommentsViewModel(service: NetworkManager())
     
     override func viewDidLoad() {
         super.viewDidLoad()
