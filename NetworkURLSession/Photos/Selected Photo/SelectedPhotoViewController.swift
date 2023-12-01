@@ -28,7 +28,8 @@ class SelectedPhotoViewController: UIViewController {
 extension SelectedPhotoViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        selectedPhotoViewModel.items?.count ?? 0
+//        selectedPhotoViewModel.items?.count ?? 0
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

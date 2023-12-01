@@ -10,10 +10,11 @@ import Foundation
 class PhotoViewModel {
     
     let service: NetworkManagerService
+    var items: [Photo]?
+
     init(service: NetworkManagerService) {
         self.service = service
     }
-    var items: [Photo]?
     
     func getPhotoObjects(completion: @escaping () -> Void) {
         service.getObjects(type: [Photo].self,

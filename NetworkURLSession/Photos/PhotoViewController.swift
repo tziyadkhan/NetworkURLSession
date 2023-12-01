@@ -10,8 +10,9 @@ import UIKit
 class PhotoViewController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
-    let photoViewModel = PhotoViewModel(service: NetworkManager())
     
+    let photoViewModel = PhotoViewModel(service: NetworkManager())
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         photoViewModel.getPhotoObjects {
