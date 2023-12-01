@@ -12,14 +12,14 @@ class SelectedPhotoViewController: UIViewController {
     @IBOutlet weak var collection: UICollectionView!
     
     let selectedPhotoViewModel = SelectedPhotoViewModel(service: NetworkManager())
-    var selectedItem: Int?
+//    var selectedItem: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedPhotoViewModel.getPhotoItem(selectedID: selectedItem) {
+        selectedPhotoViewModel.getPhotoItem(selectedID: selectedPhotoViewModel.selectedItemID) {
             DispatchQueue.main.async {
                 self.collection.reloadData()
-                self.title = "\(self.selectedPhotoViewModel.items?[(self.selectedItem ?? 0) - 1].title ?? "bosh")"
+                self.title = "\(self.selectedPhotoViewModel.items?[(self.selectedPhotoViewModel.selectedItemID ?? 3) - 1].title ?? "bosh")"
             }
         }
     }
@@ -33,7 +33,7 @@ extension SelectedPhotoViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SelectedPhotoCell", for: indexPath) as! SelectedPhotoCell
-        if let imageURLString = selectedPhotoViewModel.items?[(selectedItem ?? 0)-1 ].url,
+        if let imageURLString = selectedPhotoViewModel.items?[(selectedPhotoViewModel.selectedItemID ?? 3) - 1].url,
            let imageURL = URL(string: imageURLString) {
             URLSession.shared.dataTask(with: imageURL) { data, response, error in
                 if let imageData = data {

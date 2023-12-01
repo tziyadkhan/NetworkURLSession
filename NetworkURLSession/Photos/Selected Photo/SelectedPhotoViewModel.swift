@@ -16,6 +16,7 @@ class SelectedPhotoViewModel {
     }
     //    let networkManager = NetworkManager()
     var items: [Photo]?
+    var selectedItemID: Int?
     
     func getPhotoItem(selectedID: Int?, completion: @escaping () -> Void) {
         service.getObjects(type: [Photo].self,

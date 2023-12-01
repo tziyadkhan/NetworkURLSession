@@ -48,7 +48,7 @@ extension PhotoViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SelectedPhotoViewController") as! SelectedPhotoViewController
         guard let selectedItem = photoViewModel.items?[indexPath.row].id else {return}
-        controller.selectedItem = selectedItem
+        controller.selectedPhotoViewModel.selectedItemID = selectedItem
         navigationController?.show(controller, sender: nil)
     }
 }
